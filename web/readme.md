@@ -19,6 +19,8 @@ This project requires the following:
 
 + PHP
 + JavaScript
++ MySQL
++ bash
 
 ## Hardware
 
