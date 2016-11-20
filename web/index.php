@@ -1,37 +1,86 @@
-﻿<!DOCTYPE html>
-<!--TheFreeElectron 2015, http://www.instructables.com/member/TheFreeElectron/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>PIhome Automation Demo Project</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
 
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Raspberry Pi Gpio</title>
-    </head>
- 
-    <body style="background-color: black;">
-    <!-- On/Off button's picture -->
-	<?php
-	$val_array = array(0,0,0,0,0,0,0,0);
-	//this php script generate the first page in function of the file
-	for ( $i= 0; $i<8; $i++) {
-		//set the pin's mode to output and read them
-		system("gpio mode ".$i." out");
-		exec ("gpio read ".$i, $val_array[$i], $return );
-	}
-	//for loop to read the value
-	$i =0;
-	for ($i = 0; $i < 8; $i++) {
-		//if off
-		if ($val_array[$i][0] == 0 ) {
-			echo ("<img id='button_".$i."' src='data/img/red/red_".$i.".jpg' onclick='change_pin (".$i.");'/>");
-		}
-		//if on
-		if ($val_array[$i][0] == 1 ) {
-			echo ("<img id='button_".$i."' src='data/img/green/green_".$i.".jpg' onclick='change_pin (".$i.");'/>");
-		}	 
-	}
-	?>
-	 
-	<!-- javascript -->
-	<script src="script.js"></script>
-    </body>
+<header class="navbar navbar-default navbar-static-top" role="banner">
+    <div class="container">
+        <nav class="collapse navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.php?page=switches">Switches</a>
+                </li>
+                <li>
+                    <a href="index.php?page=sensors">Sensors</a>
+                </li>
+                <li>
+                    <a href="index.php?page=attendance">Attendance</a>
+                </li>
+                <li>
+                    <a href="index.php?page=automation">Automation</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" id="leftCol">
+
+            <div class="well">
+                <ul class="nav nav-stacked" id="sidebar">
+                    <li><a href="index.php?page=switches">Switches</a></li>
+                    <li><a href="index.php?page=sensors">Sensors</a></li>
+                    <li><a href="index.php?page=attendance">Attendance</a></li>
+                    <li><a href="index.php?page=switautomationches">Automation</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <h2><?php echo $_REQUEST['page']; ?></h2>
+
+            <?php
+                switch($_REQUEST['page']) {
+                    case "sensors":
+                        include "sensors.php";
+                        break;
+                    case "attendance":
+                        include "attendance.php";
+                        break;
+                    case "automation":
+                        include "automation.php";
+                        break;
+                    case "switches":
+                    default:
+                        include "switches.php";
+                        break;
+                }
+            ?>
+
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- script references -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
 </html>
