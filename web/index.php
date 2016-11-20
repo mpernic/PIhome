@@ -14,27 +14,6 @@
 </head>
 <body>
 
-<header class="navbar navbar-default navbar-static-top" role="banner">
-    <div class="container">
-        <nav class="collapse navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="index.php?page=switches">Switches</a>
-                </li>
-                <li>
-                    <a href="index.php?page=sensors">Sensors</a>
-                </li>
-                <li>
-                    <a href="index.php?page=attendance">Attendance</a>
-                </li>
-                <li>
-                    <a href="index.php?page=automation">Automation</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
 <!-- Begin Body -->
 <div class="container">
     <div class="row">
@@ -45,7 +24,7 @@
                     <li><a href="index.php?page=switches">Switches</a></li>
                     <li><a href="index.php?page=sensors">Sensors</a></li>
                     <li><a href="index.php?page=attendance">Attendance</a></li>
-                    <li><a href="index.php?page=switautomationches">Automation</a></li>
+                    <li><a href="index.php?page=automation">Automation</a></li>
                 </ul>
             </div>
 
@@ -56,17 +35,17 @@
             <?php
                 switch($_REQUEST['page']) {
                     case "sensors":
-                        include "sensors.php";
+                        include ("sensors.php");
                         break;
                     case "attendance":
-                        include "attendance.php";
+                        include ("attendance.php");
                         break;
                     case "automation":
-                        include "automation.php";
+                        include ("automation.php");
                         break;
                     case "switches":
                     default:
-                        include "switches.php";
+                        include ("switches.php");
                         break;
                 }
             ?>
