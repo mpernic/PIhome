@@ -29,7 +29,7 @@ echo '
         <tr>
             <td>".$k['id']."</td>
             <td>".$k['rfid_id']."</td>
-            <td>".date("F j, Y, g:i a", $k['timestamp'])."</td>
+            <td>".$k['timestamp']."</td>
         </tr>
         ";
     }
