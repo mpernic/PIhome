@@ -61,3 +61,4 @@ For this project, the following hardware has been used:
 ## Good sites to check
 
 - http://www.instructables.com/id/Simple-and-intuitive-web-interface-for-your-Raspbe/?ALLSTEPS
+- https://github.com/szazo/DHT11_Python
