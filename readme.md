@@ -62,3 +62,4 @@ For this project, the following hardware has been used:
 
 - http://www.instructables.com/id/Simple-and-intuitive-web-interface-for-your-Raspbe/?ALLSTEPS
 - https://github.com/szazo/DHT11_Python
+- https://diyhacking.com/raspberry-pi-gpio-control/
