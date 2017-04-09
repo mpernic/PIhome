@@ -9,6 +9,12 @@ For starters, clone this repository. Then, using this document, take the element
 
 To be described...
 
+Wiring:
+- 6 - beeper
+- 11 - motion sensor
+- 14 - DHT11 sensor
+- 17 - touch sensor
+
 ## References
 
 This project requires the following:
