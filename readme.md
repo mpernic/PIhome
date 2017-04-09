@@ -1,5 +1,5 @@
 ## PIhome
-PIhome is a Raspberry PI Home Automation Demo project. It consists of several modules which can be combined together, but server primarily as a demonstration and a quick start for using most common sensors, actuators and elements in general together.
+PIhome is a Raspberry PI Home Automation Demo project. It consists of several modules which can be combined together, but serves primarily as a demonstration and a quick start for using most common sensors, actuators and elements in general together.
 
 ## Installation
 
