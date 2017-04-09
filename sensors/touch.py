@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+import os
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.IN)         #Read output from PIR motion sensor
