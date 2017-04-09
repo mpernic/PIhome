@@ -20,9 +20,17 @@
         <div class="col-md-3" id="leftCol">
 
             <div class="well">
-                <ul class="nav nav-stacked" id="sidebar">
+                <ul class="nav nav-stacked nav-pills" id="sidebar">
                     <li><a href="index.php?page=switches">Switches</a></li>
-                    <li><a href="index.php?page=sensors">Sensors</a></li>
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sensors<span class="caret"></span></a>
+                      <ul class="dropdown-menu" id="sidebar">
+                        <li><a href="index.php?page=temperature">Temperature</a></li>
+                        <li><a href="index.php?page=humidity">Humidity</a></li>
+                        <li><a href="index.php?page=touch">Touch</a></li>
+                        <li><a href="index.php?page=motion">Motion</a></li>
+                      </ul>
+                      </li>
                     <li><a href="index.php?page=attendance">Attendance</a></li>
                     <li><a href="index.php?page=automation">Automation</a></li>
                 </ul>
@@ -39,6 +47,12 @@
                         break;
                     case "attendance":
                         include ("attendance.php");
+                        break;
+                    case "temperature":
+                    case "humidity":
+                    case "touch":
+                    case "motion":
+                        include ("sensors.php");
                         break;
                     case "automation":
                         include ("automation.php");
